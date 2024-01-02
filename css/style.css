@@ -144,7 +144,6 @@ header {
   top: 40px;
   right: 10px;
   width: 300px;
-  height: 100px;
   transition-duration: 0.7s;
   transform: scale(0);
   border: 1px solid;
