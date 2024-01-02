@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(230, 230, 230);
+  color: rgb(51, 51, 51);
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+main {
+  width: 80%;
+}
+
+header {
+  height: 60px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.header img {
+  width: 250px;
+  height: 100%;
+}
+
+.header ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header ul li {
+  position: relative;
+  margin-left: 3px;
+  flex-grow: 1;
+  list-style: none;
+}
+
+.header ul li a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  padding: 10px;
+}
+
+.header ul li::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  background-color: gray;
+}
+
+.header ul li::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0%;
+  transition-duration: 0.2s;
+  background-color: gray;
+}
+
+.header ul li:hover::after {
+  width: 100%;
+}
+
+.header ul li:hover::before {
+  height: 100%;
+}
+
+.header ul li a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  background-color: gray;
+}
+
+.header ul li a::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 0%;
+  transition-duration: 0.2s;
+  background-color: gray;
+}
+
+.header ul li a:hover::after {
+  width: 100%;
+}
+
+.header ul li a:hover::before {
+  height: 100%;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile h2 {
+  padding: 5px;
+}
+
+.profile p {
+  padding: 6px;
+  transform: scale(1);
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.profile p:hover {
+  transform: scale(1.2);
+}
+
+.dropdownDiv .dropDown {
+  position: absolute;
+  display: flex;
+  top: 40px;
+  right: 10px;
+  width: 300px;
+  height: 100px;
+  transition-duration: 0.7s;
+  transform: scale(0);
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: rgba(197, 197, 197, 0.459);
+}
+
+.dropdownDiv:hover .dropDown {
+  transform: scale(1.1);
+  background-color: rgba(211, 210, 210, 0.459);
+}
+
+.dropdownListEachDiv a{
+  text-decoration: none;
+  color: black;
+  border-radius: 10px;
+  padding: 2px;
+  transition-duration: .3s;
+}
+
+.dropdownListEachDiv a:hover{
+  background-color: rgb(187, 186, 186);
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+
+.image-world {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.image-world img {
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+}
+
+.allDivForDeals {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.allDivForDeals > h2::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 100px;
+  height: 3px;
+  transition-duration: 1s;
+  background-color: rgb(146, 146, 146);
+}
+
+.allDivForDeals h2:hover::after {
+  width: 400px;
+}
+
+.allDivForDeals .everything {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.eachDiv {
+  margin: 10px 3px;
+  cursor: pointer;
+}
+
+.cardFace {
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition-duration: 1s;
+}
+
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(197, 197, 197, 0.459);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.cardBack div.icons,
+.cardBack h3 {
+  display: inline-block;
+}
+
+.cardBack p {
+  margin-top: 10px;
+}
+
+.cardBack div.icons .fa-star {
+  color: gray;
+}
+
+.eachDiv:hover .cardFace {
+  transform: rotateY(180deg);
+}
+
+.eachDiv img {
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+}
+/* //////////////////////////////////// */
+
+.mainDivForInfoAndItems {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.mainDivForInfoAndItems .eachDivForInfoAndItems {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 200px;
+  margin: 0 10px;
+}
+
+.mainDivForInfoAndItems .eachDivForInfoAndItemsMoreOption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 200px;
+  margin: 0 10px;
+}
+
+.mainDivForInfoAndItems .eachDivForInfoAndItemsMoreOption::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, 0);
+  height: 2px;
+  background-color: rgba(197, 197, 197, 0.459);
+}
+
+.mainDivForInfoAndItems .eachDivForInfoAndItems::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(197, 197, 197, 0.459);
+}
+
+.backGroundIcons {
+  width: 75px;
+  height: 60px;
+  padding: 35px;
+  background-repeat: no-repeat;
+  transition: all .3s;
+  background-image: url(../image/iconsAll.png);
+}
+
+.backGroundIcons1 {
+  background-position: center 0px;
+}
+
+.eachDivForInfoAndItemsMoreOption:hover .backGroundIcons1 {
+  background-position: center -60px;
+}
+
+.backGroundIcons2 {
+  background-position: center -405px;
+}
+
+.eachDivForInfoAndItems:hover .backGroundIcons2 {
+  background-position: center -485px;
+}
+
+.backGroundIcons3 {
+  background-position: center -275px;
+}
+
+.eachDivForInfoAndItems:hover .backGroundIcons3 {
+  background-position: center -330px;
+}
+
+.backGroundIcons4 {
+  background-position: center -130px;
+}
+
+.eachDivForInfoAndItems:hover .backGroundIcons4 {
+  background-position: center -210px;
+}
+
+.mainDivForInfoAndItems p {
+  font-size: 15px;
+}
+
+/* ///////////////////////////////// */
+.mainDivForAllInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.divInfo {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 350px;
+  height: 200px;
+  margin: 0 10px;
+  border-radius: 20px;
+  background-color: rgba(197, 197, 197, 0.459);
+}
+
+.infoAboutUs {
+  margin-bottom: 20px;
+}
+
+.divInfo ul {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+.divInfo ul li {
+  display: inline-block;
+  background-color: rgba(134, 134, 134, 0.459);
+  width: 30px;
+  height: 3px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.divInfo ul li:hover {
+  background-color: rgb(150, 150, 150);
+}
+
+.photoDiscount {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.eachPhotoDiv {
+  transform: scale(1);
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.eachPhotoDiv:hover {
+  transform: scale(1.2);
+}
+
+.moreInfoAboutDiscount {
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  width: 300px;
+  border-radius: 0 0 20px 20px;
+  background-color: rgba(212, 212, 212, 0.466);
+  transform: translate(-50%, -93%);
+}
+
+.eachPhotoDiv .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 20px 20px;
+  background-color: rgba(131, 131, 131, 0.226);
+}
+
+.eachPhotoDiv img {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 20px 20px;
+}
+
+/* ///////////////////////////////////////////////////////////// */
+.mainDivAll {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.mainDivAll > h2::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 100px;
+  height: 3px;
+  transition-duration: 1s;
+  background-color: rgb(148, 148, 148);
+}
+
+.mainDivAll h2:hover::after {
+  width: 300px;
+}
+
+.divAll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.mainDivAll .eachDiv {
+  transition-duration: 1s;
+  margin: 8px;
+}
+
+.mainDivAll .eachDiv:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.mainDivAll .eachDiv h2 span {
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+.mainDivAll .eachDiv:hover h2 span {
+  opacity: 1;
+}
+
+.mainDivAll .eachDiv p a {
+  opacity: 0;
+  transition-duration: 1s;
+  color: black;
+}
+
+.mainDivAll .eachDiv:hover p a {
+  opacity: 1;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 100%;
+  margin-top: 50px;
+  border-radius: 10px 10px 0 0;
+  background-color: rgba(197, 197, 197, 0.459);
+}
+
+.footer .contactUsDiv ul {
+  margin-top: 25px;
+}
+
+.contactUsDiv > h2::after {
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 100px;
+  height: 3px;
+  transition-duration: 1s;
+  background-color: rgb(139, 139, 139);
+}
+
+.contactUsDiv > h2:hover::after {
+  width: 200px;
+}
+
+.footer .contactUsDiv ul li {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 2px;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.footer .contactUsDiv ul li:hover {
+  background-color: rgb(197, 197, 197);
+}
+
+.copyRight {
+  margin-top: 35px;
+}
